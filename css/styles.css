@@ -215,7 +215,7 @@ header {
   background-size: cover;
   color: var(--first-font-color);
   font-weight: 700;
-
+ 
   h2,
   .h2 {
     font-size: 2rem;
@@ -242,6 +242,9 @@ header {
 
 #about_section {
   background-color: var(--main-bg-color);
+  .job-des{
+    letter-spacing: .3rem;
+  }
   .my-photo {
     /* background-color: #1c1c1c; */
     position: relative;
@@ -310,11 +313,8 @@ header {
     }
     &:hover i {
       color: var(--theme-bg-second-color);
-
     }
-
   }
-
 }
 
 .icon {
@@ -375,6 +375,9 @@ header {
   .cutom-img {
     position: relative;
     overflow: hidden;
+    border-radius: 2%;
+    border: dotted 1px ;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.251);
     &:hover .data {
       opacity: 1;
       top: 3%;
@@ -387,14 +390,13 @@ header {
       margin-top: 0.2rem;
       transform: rotate(360deg);
     }
-  
+
     h3 {
       margin-top: -2rem;
       font-family: "Montserrat-Regular";
       font-weight: 600;
       transition: all 0.4s ease-in-out;
     }
-  
   }
 
   .icon {
@@ -413,7 +415,7 @@ header {
     &:hover {
       background-color: var(--first-font-color);
       border: solid black 1px;
-  
+
       & > i {
         color: var(--forth-font-color);
       }
@@ -424,7 +426,6 @@ header {
     transition: all 0.4s ease-in-out;
   }
 }
-
 
 .data {
   position: absolute;
@@ -437,7 +438,6 @@ header {
   transition: all 0.4s ease-in-out;
   box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.097);
 }
-
 
 /* ================ Clients ==================== */
 #clients_section {
@@ -483,11 +483,9 @@ header {
     }
     &:hover i {
       color: var(--theme-bg-second-color);
-
     }
-
   }
-  .icon { 
+  .icon {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -496,8 +494,7 @@ header {
     height: 4rem;
     background-color: var(--theme-bg-second-color);
 
-    i{
-     
+    i {
       width: 2rem;
       height: 2rem;
       font-size: 2rem;
@@ -510,43 +507,42 @@ header {
 /* ================ Team ==================== */
 #team_section {
   background-color: var(--theme-bg-second-color);
- .cutom-h3{
-  font-family: "Montserrat-Regular";
-  font-weight: 900;
- }
-
- .icon {
-  background-color: var(--forth-font-color);
-  text-align: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0.5rem;
-  margin-bottom: 0rem;
-  & > i {
-    color: var(--first-font-color);
-    width: 1rem;
-    height: 1rem;
-    font-size: 1rem;
+  .cutom-h3 {
+    font-family: "Montserrat-Regular";
+    font-weight: 900;
   }
-  &:hover {
-    background-color: var(--first-font-color);
-    border: solid black 1px;
 
+  .icon {
+    background-color: var(--forth-font-color);
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem;
+    margin-bottom: 0rem;
     & > i {
-      color: var(--forth-font-color);
+      color: var(--first-font-color);
+      width: 1rem;
+      height: 1rem;
+      font-size: 1rem;
+    }
+    &:hover {
+      background-color: var(--first-font-color);
+      border: solid black 1px;
+
+      & > i {
+        color: var(--forth-font-color);
+      }
     }
   }
-}
-.icons {
-  margin-top: 0rem;
-  transition: all 0.4s ease-in-out;
-}
+  .icons {
+    margin-top: 0rem;
+    transition: all 0.4s ease-in-out;
+  }
   .team-photo {
     position: relative;
     overflow: hidden;
-    img{
+    img {
       transition: all 0.5s ease-in-out;
-
     }
     .data {
       position: absolute;
@@ -565,21 +561,18 @@ header {
         opacity: 1;
         transform: scale(1);
       }
-      img{
+      img {
         transform: scale(1.2);
-
       }
     }
   }
   .card-body {
     background-color: #5b5b5b;
-    &:hover ~.team-photo{
-      .data{
+    &:hover ~ .team-photo {
+      .data {
         opacity: 1;
         transform: scale(1);
       }
-     
-       
     }
   }
 }
@@ -587,11 +580,11 @@ header {
 /* ================ Contact ==================== */
 
 #contact_section {
-  .card{
+  .card {
     padding-inline: 0;
   }
-  p{
-    font-size: .8rem;
+  p {
+    font-size: 0.8rem;
   }
   .card {
     &:hover .icon {
@@ -601,31 +594,26 @@ header {
     }
     &:hover i {
       color: var(--theme-bg-second-color);
-
-    }
- 
-}
-form {
-  
-  .sub-button{
-    --bs-btn-bg: var(--forth-font-color);
-    --bs-btn-color: var(--first-font-color);
-    --bs-btn-border-color: var(--first-font-color);
-    --bs-btn-hover-color: var(--forth-font-color);
-    --bs-btn-hover-bg: var(--first-font-color);
-    --bs-btn-hover-border-color: var(--forth-font-color);
-  }
-  .form-control{
-    background-color: var(--theme-bg-second-color);
-    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.097);
-
-    &:focus{
-      border-color: transparent;
-
     }
   }
+  form {
+    .sub-button {
+      --bs-btn-bg: var(--forth-font-color);
+      --bs-btn-color: var(--first-font-color);
+      --bs-btn-border-color: var(--first-font-color);
+      --bs-btn-hover-color: var(--forth-font-color);
+      --bs-btn-hover-bg: var(--first-font-color);
+      --bs-btn-hover-border-color: var(--forth-font-color);
+    }
+    .form-control {
+      background-color: var(--theme-bg-second-color);
+      box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.097);
 
-}
+      &:focus {
+        border-color: transparent;
+      }
+    }
+  }
 }
 
 /* ================ footer ==================== */
@@ -633,11 +621,10 @@ form {
 footer {
   background-color: var(--forth-font-color);
   box-shadow: inset 0px 2px 15px 1px rgba(0, 0, 0, 0.258);
-  p{
-    font-size: .9rem;
-    color: #6D797A;
+  p {
+    font-size: 0.9rem;
+    color: #6d797a;
   }
-  
 }
 /* ================ Media ==================== */
 
