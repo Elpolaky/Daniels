@@ -1,33 +1,46 @@
 pipeline {
     agent {
-        docker {
-            label 'jenkins-alpine'
-        }
-        // or label 'jenkins-alpine'
+        label 'jenkins-alpine'  // Fixed agent declaration
     }
     triggers {
-        pollSCM('H/2 * * * *') // Checks for SCM changes every 2 minutes
+        pollSCM('H/2 * * * *')  // Correct SCM polling
     }
     stages {
-      
+        // Added missing checkout stage
+        stage('Checkout') {
+            steps {
+                checkout scm  // Essential for getting source code
+            }
+        }
+        
         stage('Build') {
             steps {
-                // Add your build commands here
                 sh 'echo "Building..."'
+                // Add real build commands here like:
+                // sh 'mvn clean install' or 'npm run build'
             }
         }
+        
         stage('Test') {
             steps {
-                // Add your test commands here
                 sh 'echo "Testing..."'
+                // Add real test commands here like:
+                // sh 'mvn test' or 'npm test'
             }
         }
+        
         stage('Deploy') {
             steps {
-                // Add deployment commands here
                 sh 'echo "Deploying..."'
+                // Add deployment commands here like:
+                // sh 'scp target/*.jar user@server:/deploy/path'
             }
         }
     }
-   
+    // Added recommended post-build section
+    post {
+        always {
+            cleanWs()  // Clean workspace after build
+        }
+    }
 }
