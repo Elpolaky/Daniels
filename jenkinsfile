@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'jenkins-daniles'  // Fixed agent declaration
+        label 'docker-jenkins-alpine-daniles'  // Fixed agent declaration
     }
     triggers {
         pollSCM('H/2 * * * *')  // Correct SCM polling
