@@ -9,11 +9,7 @@ pipeline {
         pollSCM('H/2 * * * *') // Checks for SCM changes every 2 minutes
     }
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
+      
         stage('Build') {
             steps {
                 // Add your build commands here
